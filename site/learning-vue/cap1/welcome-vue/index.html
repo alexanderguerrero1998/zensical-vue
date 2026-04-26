@@ -1,0 +1,1127 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Notas de aprendizaje de Express.js">
+      
+      
+        <meta name="author" content="Alexander Guerrero">
+      
+      
+      
+      
+        <link rel="next" href="../../cap2/how-vue-works/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.36">
+    
+    
+      
+        <title>Welcome to the Vue.js World! - LEARNING VUE JS</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.1e981d71.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#welcome-to-the-vuejs-world" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="LEARNING VUE JS" class="md-header__button md-logo" aria-label="LEARNING VUE JS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LEARNING VUE JS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Welcome to the Vue.js World!
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/alexanderguerrero1998/zensical-vue" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    zensical-vue
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LEARNING VUE JS" class="md-nav__button md-logo" aria-label="LEARNING VUE JS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    LEARNING VUE JS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/alexanderguerrero1998/zensical-vue" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    zensical-vue
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LEARNING VUE JS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    LEARNING VUE JS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WELCOME VUE
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WELCOME VUE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-vuejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ¿Qué es Vue.js?
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beneficios-de-vue-en-el-desarrollo-web-moderno" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Beneficios de Vue en el desarrollo web moderno
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalar-node-js" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Instalar Node Js
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-node-package-manager-npm" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        El Node Package Manager (NPM)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yarn" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Yarn
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#herramientas-para-desarrolladores-de-vue" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Herramientas para Desarrolladores de Vue
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vitejs-como-herramienta-de-gestion-de-compiladores" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Vite.js como herramienta de gestión de compiladores
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-una-nueva-aplicacion-vue" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Crear una nueva aplicación Vue
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-del-repositorio-de-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Estructura del repositorio de archivos
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sumary" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SUMARY
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap2/how-vue-works/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HOW VUE WORKS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OTRO LIBRO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OTRO LIBRO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Efficient_NodeJS/cap1/nodeFunfamentals.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NODE FUNDAMENTALS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-vuejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ¿Qué es Vue.js?
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beneficios-de-vue-en-el-desarrollo-web-moderno" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Beneficios de Vue en el desarrollo web moderno
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalar-node-js" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Instalar Node Js
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-node-package-manager-npm" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        El Node Package Manager (NPM)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yarn" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Yarn
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#herramientas-para-desarrolladores-de-vue" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Herramientas para Desarrolladores de Vue
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vitejs-como-herramienta-de-gestion-de-compiladores" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Vite.js como herramienta de gestión de compiladores
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-una-nueva-aplicacion-vue" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Crear una nueva aplicación Vue
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-del-repositorio-de-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Estructura del repositorio de archivos
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sumary" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SUMARY
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Get started
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="././" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    LEARNING VUE JS
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+  
+
+
+<h1 id="welcome-to-the-vuejs-world">Welcome to the Vue.js World!<a class="headerlink" href="#welcome-to-the-vuejs-world" title="Permanent link">&para;</a></h1>
+<p>Lanzado inicialmente en 2014, Vue.js ha experimentado una rápida adopción, especialmente en 2018. Vue es un framework popular dentro de la comunidad de desarrolladores, gracias a su facilidad de uso y flexibilidad. Si buscas una excelente herramienta para crear y distribuir aplicaciones web de alto rendimiento a los usuarios finales, Vue.js es la respuesta.</p>
+<p>Este capítulo destaca los conceptos clave de Vue.js y te guía a través de las herramientas que necesitas para tu entorno de desarrollo. También explora herramientas útiles que facilitan el proceso de desarrollo. Al finalizar el capítulo, tendrás un entorno de trabajo con una aplicación Vue.js sencilla, lista para comenzar tu aprendizaje de Vue.js.</p>
+<h2 id="que-es-vuejs">¿Qué es Vue.js?<a class="headerlink" href="#que-es-vuejs" title="Permanent link">&para;</a></h2>
+<p>Vue.js, o Vue, significa vista en francés; es un motor JavaScript para crear interfaces de usuario (UI) progresivas, componibles y reactivas en aplicaciones frontend.</p>
+<p>Vue se basa en JavaScript y ofrece un mecanismo organizado para estructurar y construir aplicaciones web. También actúa como transcompilador, compilando y traduciendo el código Vue (como un componente de archivo único, que analizaremos con más detalle en «Estructura de un componente de archivo único de Vue») a código HTML, CSS y JavaScript equivalente durante la compilación, antes del despliegue. En modo independiente (con un archivo de script generado), el motor Vue realiza la traducción del código en tiempo de ejecución.</p>
+<p>Vue sigue el patrón MVVM (Modelo-Vista-ViewModel). A diferencia de MVC (Modelo-Vista-Controlador),¹ el ViewModel es el que enlaza los datos entre la Vista y el Modelo. Permitir la comunicación directa entre la Vista y el Modelo habilita progresivamente la reactividad del componente.</p>
+<p>En resumen, Vue se creó para centrarse únicamente en la capa de Vista, pero es adaptable de forma incremental para integrarse con otras bibliotecas externas y así lograr usos más complejos.</p>
+<p>Dado que Vue se centra exclusivamente en la capa de Vista, facilita el desarrollo de aplicaciones de una sola página (SPA). Las SPA pueden ejecutarse de forma rápida y fluida, comunicando datos continuamente con el backend.</p>
+<p>El sitio web oficial de Vue incluye documentación de la API, instrucciones de instalación y casos de uso principales como referencia.</p>
+<h2 id="beneficios-de-vue-en-el-desarrollo-web-moderno">Beneficios de Vue en el desarrollo web moderno<a class="headerlink" href="#beneficios-de-vue-en-el-desarrollo-web-moderno" title="Permanent link">&para;</a></h2>
+<p>Una ventaja significativa de Vue es su documentación clara y fácil de entender. Además, el ecosistema y la comunidad de soporte que lo rodean, como Vue Router, Vuex y Pinia, facilitan a los desarrolladores la configuración y ejecución de sus proyectos con mínimo esfuerzo.</p>
+<p>Las API de Vue son sencillas y familiares para quienes hayan trabajado con AngularJS o jQuery. Su potente sintaxis de plantillas minimiza el aprendizaje y simplifica el manejo de datos y la escucha de eventos del Modelo de Objetos del Documento (DOM) en la aplicación.</p>
+<p>Otro beneficio importante de Vue es su tamaño. El tamaño de un framework influye considerablemente en el rendimiento de la aplicación, especialmente en el tiempo de carga inicial. Actualmente, Vue es el framework más rápido y ligero (aproximadamente 10 kB). Esta ventaja se traduce en una mayor eficiencia, descargas más rápidas y mejor rendimiento en tiempo de ejecución desde la perspectiva del navegador.</p>
+<p>Con el lanzamiento de Vue 3, la compatibilidad integrada con TypeScript ofrece a los desarrolladores la ventaja de definir tipos y lograr que su código sea más legible, organizado y fácil de mantener a largo plazo.</p>
+<h2 id="instalar-node-js">Instalar Node Js<a class="headerlink" href="#instalar-node-js" title="Permanent link">&para;</a></h2>
+<p>Trabajar con Vue requiere configurar el ecosistema de desarrollo y tener conocimientos previos de programación para seguir el ritmo del aprendizaje. Node.js y NPM (o Yarn) son herramientas de desarrollo necesarias que debes instalar antes de empezar a trabajar en cualquier aplicación.</p>
+<p>Node.js (o Node) es un entorno de servidor JavaScript de código abierto basado en el motor de ejecución V8 de Chrome. Node permite a los desarrolladores programar y ejecutar aplicaciones JavaScript localmente o en un servidor, fuera del navegador.</p>
+<p>Node es compatible con múltiples plataformas y es fácil de instalar. Si no está seguro de haber instalado Node, abra su terminal (o símbolo del sistema en Windows) y ejecute el siguiente comando:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npm<span class="w"> </span>-v
+</span></code></pre></div>
+<p>El resultado debería mostrar la versión de Node o «Comando no encontrado» si Node no está instalado.</p>
+<p>Si no ha instalado Node o su versión es inferior a la 12.2.0,
+visite el sitio web del proyecto Node y descargue el instalador de la última versión compatible con su sistema operativo (Figura 1-1).</p>
+<p>Una vez finalizada la descarga, haga clic en el instalador y siga las instrucciones para configurarlo.</p>
+<p>Al instalar Node, además del comando <code>node</code>, también se añade el comando <code>npm</code> a la línea de comandos. Si escribe el comando <code>node -v</code>, debería ver el número de versión instalada.</p>
+<h2 id="el-node-package-manager-npm">El Node Package Manager (NPM)<a class="headerlink" href="#el-node-package-manager-npm" title="Permanent link">&para;</a></h2>
+<p>Es el gestor de paquetes predeterminado para Node. Se instala junto con Node.js de forma predeterminada. Permite a los desarrolladores descargar e instalar fácilmente otros paquetes de Node desde servidores remotos. Vue y otros marcos de trabajo de front-end son ejemplos de paquetes de Node muy útiles.</p>
+<p>NPM es una potente herramienta para desarrollar aplicaciones JavaScript complejas, con la capacidad de crear y ejecutar scripts de tareas (para iniciar un servidor de desarrollo local, por ejemplo) y descargar automáticamente las dependencias de los paquetes del proyecto.</p>
+<p>De forma similar a la comprobación de la versión de Node, puedes comprobar la versión de NPM mediante el comando <code>npm</code>:</p>
+<p><code>npm -v</code>. </p>
+<p>Para actualizar tu versión de NPM, usa el siguiente comando: </p>
+<p><code>npm install npm@latest -g</code>. </p>
+<p>Con el parámetro <code>@latest</code>, tu herramienta NPM actual se actualiza automáticamente a la última versión. Puedes ejecutar <code>npm -v</code> de nuevo para asegurarte de que se ha actualizado correctamente</p>
+<p>También puedes reemplazar la palabra <code>latest</code> para especificar una versión concreta de NPM (en el formato <code>xx.x.x</code>). Además, debes indicar la instalación global con la bandera <code>-g</code> para que el comando <code>npm</code> esté disponible en todo tu equipo local. Por ejemplo, si ejecutas el comando <code>npm install npm@6.13.4 -g</code>, la versión de NPM se actualizará automáticamente.</p>
+<div class="admonition note">
+<p class="admonition-title">VERSIÓN DE NPM PARA ESTE LIBRO</p>
+<p>Recomiendo instalar la versión 7.x de NPM para poder seguir todos los ejemplos de código de NPM en este libro.</p>
+</div>
+<p>Un proyecto Node depende de un conjunto de paquetes Node² (o dependencias) para funcionar correctamente. En el archivo package.json, ubicado en el directorio del proyecto, se encuentran estos paquetes instalados. Este archivo también describe el proyecto, incluyendo el nombre, el/los autor/es y otros comandos de scripting aplicados exclusivamente al proyecto.</p>
+<p>Cuando ejecutas el comando <code>npm install</code> (o <code>npm i</code>) dentro de la carpeta del proyecto, NPM consultará este archivo e instalará todos los paquetes listados en una carpeta llamada <code>node_modules</code>, listos para que el proyecto los utilice. Además, creará un archivo <code>package-lock.json</code> para controlar la versión de los paquetes instalados y la compatibilidad entre dependencias comunes.</p>
+<p>Para iniciar un proyecto desde cero con dependencias, usa el siguiente comando dentro del directorio del proyecto:
+<code>npm init</code>. Este comando te guiará a través de algunas preguntas relacionadas con el proyecto e inicializará un proyecto vacío con un archivo <code>package.json</code> que contiene tus respuestas.</p>
+<p>Puedes buscar paquetes de código abierto públicos en el sitio web oficial de NPM.</p>
+<h2 id="yarn">Yarn<a class="headerlink" href="#yarn" title="Permanent link">&para;</a></h2>
+<p>Si NPM es la herramienta estándar de gestión de paquetes, Yarn es un gestor de paquetes alternativo y muy popular desarrollado por Facebook.³ Yarn es más rápido, más seguro y más fiable gracias a su mecanismo de descarga y almacenamiento en caché en paralelo. Es compatible con todos los paquetes de NPM, por lo que puede utilizarse como sustituto directo de NPM.</p>
+<p>Puedes instalar la última versión de Yarn para tu sistema operativo visitando la página web oficial de Yarn.</p>
+<p>Si trabajas en un ordenador con macOS y tienes instalado Homebrew,puedes instalar Yarn directamente utilizando el comando</p>
+<p><code>brew install yarn</code> </p>
+<p>Este comando instala Yarn y Node.js (si no están disponibles) globalmente.</p>
+<p>También puedes instalar Yarn globalmente usando la herramienta de gestión de paquetes NPM con el siguiente comando:</p>
+<p><code>npm i -g yarn</code></p>
+<p>Ahora deberías tener Yarn instalado en tu máquina y listo para usar.</p>
+<p>Para comprobar si Yarn está instalado y verificar su versión, usa el siguiente comando:</p>
+<p><code>yarn -v</code></p>
+<p>Para añadir un nuevo paquete, usa el siguiente comando:</p>
+<p><code>yarn add &lt;nombre del paquete de Node&gt;</code> </p>
+<p>Para instalar las dependencias de un proyecto, en lugar de usar <code>npm install</code>, solo necesitas ejecutar el comando yarn dentro del directorio del proyecto. Una vez finalizado, al igual que con NPM, Yarn también añadirá un archivo yarn.lock en el directorio de tu proyecto.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Utilizaremos Yarn como herramienta de gestión de paquetes para el código presentado en este libro.</p>
+</div>
+<p>En este punto, ya has configurado tu entorno de codificación esencial para el desarrollo con Vue. En la siguiente sección, veremos las Herramientas para Desarrolladores de Vue y lo que nos ofrecen para trabajar con Vue.</p>
+<h2 id="herramientas-para-desarrolladores-de-vue">Herramientas para Desarrolladores de Vue<a class="headerlink" href="#herramientas-para-desarrolladores-de-vue" title="Permanent link">&para;</a></h2>
+<p>Las Herramientas para Desarrolladores de Vue (o Vue Devtools) son las herramientas oficiales que te ayudan a trabajar con tus proyectos de Vue localmente. Estas herramientas incluyen extensiones para Chrome y Firefox, y una aplicación de escritorio Electron para otros navegadores. Deberías instalar una de estas herramientas durante el proceso de desarrollo.</p>
+<p>Los usuarios de Chrome pueden ir al enlace de la extensión en la Chrome Web Store e instalar la extensión, tal como se muestra en la figura 1‑2.</p>
+<p><img alt="" src="../devtools.png" /></p>
+<p>Una vez instalada y habilitada la extensión, podrá detectar si algún sitio web utiliza Vue en producción. Cuando un sitio web está construido con Vue, el icono de Vue en la barra de herramientas del navegador se resalta.</p>
+<p>Las Vue Devtools te permiten inspeccionar el árbol de componentes Vue, las props y los datos de cada componente, los eventos y la información de enrutado dentro de la consola de desarrollador del navegador. <a href="https://devtools.vuejs.org/getting-started/introduction">devtools.vuejs</a></p>
+<p>Estas herramientas dividen la información en distintas pestañas, ofreciendo una visión clara y organizada que resulta muy útil para depurar y analizar el comportamiento de cualquier componente Vue dentro de tu proyecto. <a href="https://www.digitalocean.com/community/tutorials/vuejs-vue-devtools">digitalocean</a></p>
+<h2 id="vitejs-como-herramienta-de-gestion-de-compiladores">Vite.js como herramienta de gestión de compiladores<a class="headerlink" href="#vitejs-como-herramienta-de-gestion-de-compiladores" title="Permanent link">&para;</a></h2>
+<p>Presentado en 2020, Vite.js (o Vite) es un servidor de desarrollo JavaScript que
+utiliza la importación nativa del módulo ES4 durante el desarrollo en lugar de empaquetar el código en fragmentos de archivos JavaScript como Webpack, Rollup, etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A partir de ahora, utilizaremos el término Vite para referirnos a Vite.js.</p>
+</div>
+<p>Este comportamiento permite a <strong>Vite</strong> realizar un <strong>hot reload</strong> durante el desarrollo a una velocidad impresionante, haciendo la experiencia de desarrollo fluida sin interrupciones.</p>
+<p>También ofrece muchas <strong>características listas para usar</strong> como soporte para <strong>TypeScript</strong> y compilación <strong>on-demand</strong>, que está ganando popularidad rápidamente en la comunidad de desarrolladores.</p>
+<p>La comunidad de <strong>Vue</strong> ha reemplazado la herramienta <strong>Vue CLI</strong> (que usa <strong>Webpack</strong> internamente) con <strong>Vite</strong> como la herramienta predeterminada para crear y gestionar proyectos Vue. <a href="https://tms-outsource.com/blog/posts/vue-cli-vs-vite/">tms-outsource</a></p>
+<details class="info">
+<summary>Vue y vite</summary>
+<p><strong>Cuando se  dice que vue traduce a html, css y js es porque vite esta detras haciendo ese trabajo ?</strong></p>
+<p>Exacto, lo entendiste perfecto.</p>
+<p>Cuando la gente dice "Vue compila a HTML, CSS y JS" están simplificando. El proceso real es:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Tu código .vue
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    ↓
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Vite (hace la traducción)
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    ↓
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>HTML + CSS + JS puro
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    ↓
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>El navegador lo entiende
+</span></code></pre></div>
+<p>Vue como tal es el <strong>framework</strong> — define la sintaxis, la reactividad, cómo funcionan los componentes. Pero Vue solo no llega al navegador. <strong>Vite es el que agarra ese código Vue y lo transforma</strong> en algo que el navegador pueda leer.</p>
+<p>Es una colaboración:</p>
+<ul>
+<li><strong>Vue</strong> → define el lenguaje y las reglas</li>
+<li><strong>Vite</strong> → hace el trabajo de traducción</li>
+</ul>
+<p>Como si Vue fuera el idioma y Vite fuera el intérprete.</p>
+</details>
+<h2 id="crear-una-nueva-aplicacion-vue">Crear una nueva aplicación Vue<a class="headerlink" href="#crear-una-nueva-aplicacion-vue" title="Permanent link">&para;</a></h2>
+<p>Con <strong>Vite</strong>, hay varias formas de crear un <strong>nuevo proyecto de aplicación Vue</strong>. La manera más directa es usar la siguiente sintaxis de comando en tu terminal:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npm init vue@latest
+</span></code></pre></div>
+<p>Este comando primero instalará <strong>create-vue</strong>, una herramienta oficial de scaffolding, y luego te presentará una <strong>lista de preguntas esenciales</strong> para configurar tu aplicación Vue. <a href="https://www.luisllamas.es/crear-app-vue/">luisllamas</a></p>
+<p>Las configuraciones usadas para la aplicación Vue en este libro incluyen:</p>
+<ul>
+<li><strong>Nombre del proyecto Vue</strong>, en formato <strong>todo en minúsculas</strong>. <strong>Vite</strong> usa este valor para crear un <strong>nuevo directorio de proyecto</strong> anidado en tu directorio actual.</li>
+<li><strong>TypeScript</strong>: Un lenguaje de programación tipado construido sobre <strong>JavaScript</strong>.</li>
+<li><strong>JSX</strong>: En el <strong>Capítulo 2</strong>, discutiremos cómo <strong>Vue</strong> soporta escribir código en estándar <strong>JSX</strong> (escribir sintaxis HTML directamente en bloques de código JavaScript).</li>
+<li><strong>Vue Router</strong>: En el <strong>Capítulo 8</strong>, implementaremos <strong>routing</strong> en nuestra aplicación usando <strong>Vue Router</strong>.</li>
+<li><strong>Pinia</strong>: En el <strong>Capítulo 9</strong>, discutiremos usar <strong>Pinia</strong> para gestionar y compartir datos a través de la aplicación.</li>
+<li><strong>Vitest</strong>: Esta es la <strong>herramienta oficial de unit testing</strong> para cualquier proyecto <strong>Vite</strong>, que exploraremos más en el <strong>Capítulo 11</strong>.</li>
+<li><strong>ESLint</strong>: Esta herramienta verifica tu código según un conjunto de <strong>reglas ESLint</strong>, ayudando a mantener tu estándar de codificación, hacerlo más legible y evitar errores ocultos.</li>
+<li><strong>Prettier</strong>: Esta herramienta <strong>formatea automáticamente</strong> los estilos de tu código para mantenerlo limpio, hermoso y siguiendo un <strong>estándar de codificación</strong>.</li>
+</ul>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>application_vue&gt;<span class="w"> </span>npm<span class="w"> </span>init<span class="w"> </span>vue@latest
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>&gt;<span class="w"> </span>npx
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>&gt;<span class="w"> </span>create-vue
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>┌<span class="w">  </span>Vue.js<span class="w"> </span>-<span class="w"> </span>The<span class="w"> </span>Progressive<span class="w"> </span>JavaScript<span class="w"> </span>Framework
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>│
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>◇<span class="w">  </span>Project<span class="w"> </span>name<span class="w"> </span><span class="o">(</span>target<span class="w"> </span>directory<span class="o">)</span>:
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>│<span class="w">  </span>→<span class="w"> </span>learning-vue-app
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>│
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>◇<span class="w">  </span>Use<span class="w"> </span>TypeScript?
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>│<span class="w">  </span>→<span class="w"> </span>Yes
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>│
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>◇<span class="w">  </span>Select<span class="w"> </span>features<span class="w"> </span>to<span class="w"> </span>include<span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>project:<span class="w"> </span><span class="o">(</span>↑/↓<span class="w"> </span>to<span class="w"> </span>navigate,<span class="w"> </span>space<span class="w"> </span>to<span class="w"> </span><span class="k">select</span>,<span class="w"> </span>a<span class="w"> </span>to<span class="w"> </span>toggle<span class="w"> </span>all,<span class="w"> </span>enter<span class="w"> </span>to<span class="w"> </span>confirm<span class="o">)</span><span class="w"> </span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>│<span class="w">  </span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>│<span class="w"> </span><span class="o">[</span>✓<span class="o">]</span><span class="w"> </span>JSX<span class="w"> </span>Support,<span class="w"> </span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>│<span class="w"> </span><span class="o">[</span>✓<span class="o">]</span><span class="w"> </span>Router<span class="w"> </span><span class="o">(</span>SPA<span class="w"> </span>development<span class="o">)</span>,<span class="w"> </span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>│<span class="w"> </span><span class="o">[</span>✓<span class="o">]</span><span class="w"> </span>Pinia<span class="w"> </span><span class="o">(</span>state<span class="w"> </span>management<span class="o">)</span>,<span class="w"> </span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>│<span class="w"> </span><span class="o">[</span>✓<span class="o">]</span><span class="w"> </span>Vitest<span class="w"> </span><span class="o">(</span>unit<span class="w"> </span>testing<span class="o">)</span>,<span class="w"> </span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>│<span class="w"> </span><span class="o">[</span>X<span class="o">]</span><span class="w"> </span>End-to-End<span class="w"> </span><span class="o">(</span>unit<span class="w"> </span>testing<span class="o">)</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>│<span class="w"> </span><span class="o">[</span>✓<span class="o">]</span><span class="w"> </span>Linter<span class="w"> </span><span class="o">(</span>error<span class="w"> </span>prevention<span class="o">)</span>,<span class="w"> </span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>│<span class="w"> </span><span class="o">[</span>✓<span class="o">]</span><span class="w">  </span>Prettier<span class="w"> </span><span class="o">(</span>code<span class="w"> </span>formatting<span class="o">)</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>│
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>◇<span class="w">  </span>Select<span class="w"> </span>experimental<span class="w"> </span>features<span class="w"> </span>to<span class="w"> </span>include<span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>project:<span class="w"> </span><span class="o">(</span>↑/↓<span class="w"> </span>to<span class="w"> </span>navigate,<span class="w"> </span>space<span class="w"> </span>to<span class="w"> </span><span class="k">select</span>,<span class="w"> </span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>│<span class="w">  </span>a<span class="w"> </span>to<span class="w"> </span>toggle<span class="w"> </span>all,<span class="w"> </span>enter<span class="w"> </span>to<span class="w"> </span>confirm<span class="o">)</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>│<span class="w">  </span>→<span class="w"> </span>none
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>│
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>◇<span class="w">  </span>Skip<span class="w"> </span>all<span class="w"> </span>example<span class="w"> </span>code<span class="w"> </span>and<span class="w"> </span>start<span class="w"> </span>with<span class="w"> </span>a<span class="w"> </span>blank<span class="w"> </span>Vue<span class="w"> </span>project?
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>│<span class="w">  </span>→<span class="w"> </span>No
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>Scaffolding<span class="w"> </span>project<span class="w"> </span><span class="k">in</span><span class="w"> </span>C:<span class="se">\L</span>earnings<span class="se">\b</span>ackend-learnings-projects<span class="se">\l</span>earning-vue-examples<span class="se">\c</span>apitulo-1<span class="se">\a</span>_new_application_vue<span class="se">\l</span>earning-vue-app...
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>│
+</span></code></pre></div>
+<p>Tras recibir la configuración deseada, create-vue genera la estructura básica del proyecto.
+Una vez finalizado, mostrará una serie de comandos en orden para que los ejecutes y pongas en marcha tu proyecto localmente.</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>└<span class="w">  </span>Done.<span class="w"> </span>Now<span class="w"> </span>run:
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">   </span><span class="nb">cd</span><span class="w"> </span>learning-vue-app
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">   </span>npm<span class="w"> </span>install
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">   </span>npm<span class="w"> </span>run<span class="w"> </span>format
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">   </span>npm<span class="w"> </span>run<span class="w"> </span>dev
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">|</span><span class="w"> </span>Optional:<span class="w"> </span>Initialize<span class="w"> </span>Git<span class="w"> </span><span class="k">in</span><span class="w"> </span>your<span class="w"> </span>project<span class="w"> </span>directory<span class="w"> </span>with:
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">   </span>git<span class="w"> </span>init<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>-A<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;initial commit&quot;</span>
+</span></code></pre></div>
+A continuación, exploraremos la estructura de archivos de nuestro proyecto recién creado.</p>
+<h2 id="estructura-del-repositorio-de-archivos">Estructura del repositorio de archivos<a class="headerlink" href="#estructura-del-repositorio-de-archivos" title="Permanent link">&para;</a></h2>
+<p>Un nuevo proyecto de Vue contiene la siguiente estructura inicial dentro del directorio src:</p>
+<dl>
+<dt><code>assets</code></dt>
+<dd>
+<p>Carpeta donde se pueden colocar las imágenes, gráficos y archivos CSS del   proyecto.</p>
+</dd>
+<dt><code>components</code></dt>
+<dd>
+<p>Carpeta donde se crean y escriben los componentes Vue
+siguiendo el concepto de Componente de Archivo Único (SFC).</p>
+</dd>
+<dt><code>router</code></dt>
+<dd>
+<p>Carpeta donde se almacenan todas las configuraciones de enrutamiento.</p>
+</dd>
+<dt><code>stores</code></dt>
+<dd>
+<p>Carpeta donde se crean y gestionan los datos globales del proyecto mediante
+Pinia.</p>
+</dd>
+<dt><code>views</code></dt>
+<dd>
+<p>Carpeta donde se almacenan todos los componentes Vue que se vinculan a las rutas definidas.</p>
+</dd>
+<dt><code>App.vue</code></dt>
+<dd>
+<p>El componente principal de la aplicación Vue actúa como raíz para alojar todos los demás componentes Vue dentro de la aplicación.</p>
+</dd>
+<dt><code>main.ts</code></dt>
+<dd>
+<p>Contiene el código TypeScript responsable de montar el componente raíz (App.vue) en un elemento HTML en la página DOM. Este archivo también es donde se configuran los plugins y las bibliotecas de terceros en la aplicación, como Vue Router, Pinia, etc.</p>
+</dd>
+</dl>
+<details class="info">
+<summary>Comando run</summary>
+<p>En resumen:</p>
+<ul>
+<li><code>run</code> es como cualquier otro <strong>subcomando</strong> definido en npm cuyo trabajo específico es buscar y ejecutar scripts del<code>package.json</code></li>
+<li>npm tien otros subcomandos como <code>install</code> <code>init</code> <code>uninstall</code></li>
+<li>Solo <code>start</code>, <code>test</code> y <code>stop</code> son atajos que no necesitan <code>run</code></li>
+<li>Todo lo demás — sin importar si es proyecto Node, Vue, o cualquier otro — necesita <code>npm run &lt;script&gt;</code>".</li>
+</ul>
+</details>
+<p>En el directorio raíz del proyecto se encuentra el archivo index.html, que es el punto de entrada para cargar la aplicación en el navegador. Este archivo importa el archivo main.ts mediante la etiqueta <code>&lt;script&gt;</code> y proporciona el elemento de destino para que el motor de Vue cargue la aplicación ejecutando el código de main.ts. Es probable que este archivo permanezca sin cambios durante el desarrollo.  asdasd</p>
+<p>Puedes encontrar todo el código de ejemplo en el repositorio de GitHub dedicado. Hemos organizado estos archivos de código por capítulos.</p>
+<h2 id="sumary">SUMARY<a class="headerlink" href="#sumary" title="Permanent link">&para;</a></h2>
+<p>En este capítulo, aprendimos sobre los beneficios de Vue y cómo instalar las herramientas esenciales para nuestro entorno de desarrollo. También hablamos de las herramientas para desarrolladores de Vue y otras herramientas para crear proyectos de Vue de manera efectiva, como Vite. Ahora que hemos creado nuestro primer proyecto de Vue, estamos listos para aprender Vue, comenzando por lo básico: la instancia de Vue, las directivas integradas y cómo Vue maneja la reactividad.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+        
+          
+          <a href="../../cap2/how-vue-works/" class="md-footer__link md-footer__link--next" aria-label="Next: HOW VUE WORKS">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                HOW VUE WORKS
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 The authors
+
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.top","navigation.tracking","search.highlight"],"search":"../../../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.dbc0afdc.min.js"></script>
+      
+    
+  </body>
+</html>
