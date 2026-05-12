@@ -19,6 +19,8 @@ nav = [
           "LEARNING VUE JS" = [ 
             { "WELCOME VUE" = "learning-vue/cap1/welcome-vue.md" },
             { "HOW VUE WORKS" = "learning-vue/cap2/how-vue-works.md" },
+            { "COMPOSING COMPONENTS" = "learning-vue/cap3/composing-components.md" },
+            
           
           ]
         },{ "OTRO LIBRO" = [ { "NODE FUNDAMENTALS" = "Efficient_NodeJS/cap1/nodeFunfamentals.md" },]}

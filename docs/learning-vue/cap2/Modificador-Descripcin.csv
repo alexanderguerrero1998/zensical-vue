@@ -1,0 +1,7 @@
+"Modificador","Descripción"
+".stop","En lugar de llamar a event.stopPropagation()."
+".prevent","En lugar de llamar a event.preventDefault()."
+".self","Dispara el listener del evento solo si el objetivo del evento es el elemento donde adjuntamos el listener."
+".once","Dispara el listener del evento como máximo una vez."
+".capture","En lugar de pasar { capture: true } como tercer parámetro para addEventListener(), o capture=""true"" en el elemento. Este modificador dispara el listener en el orden de la fase de captura, en lugar del orden habitual de la fase de burbujeo."
+".passive","Principalmente para optar por un mejor rendimiento de desplazamiento y evitar disparar event.preventDefault(). Se usa en lugar de pasar { passive: true } como tercer parámetro para addEventListener() o añadir passive=""true"" al elemento."
