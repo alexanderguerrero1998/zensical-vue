@@ -461,8 +461,107 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#beforecreate" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        beforeCreate
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#created" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        created
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beforemount" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        beforeMount
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mounted" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        mounted
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beforeupdate" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        beforeUpdate
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updated" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        updated
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beforeunmount" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        beforeUnmount
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unmounted" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        unmounted
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Methods
+      </span>
+    </span>
+  </a>
   
 </li>
       
@@ -658,8 +757,107 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#beforecreate" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        beforeCreate
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#created" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        created
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beforemount" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        beforeMount
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mounted" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        mounted
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beforeupdate" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        beforeUpdate
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updated" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        updated
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beforeunmount" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        beforeUnmount
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unmounted" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        unmounted
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Methods
+      </span>
+    </span>
+  </a>
   
 </li>
       
@@ -1076,10 +1274,163 @@ Una gran ventaja de usar <code>&lt;script setup&gt;</code> en lugar de <code>set
 </span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7"></a><span class="p">})</span>
 </span></code></pre></div></td></tr></table></div>
-Es útil usar setup() con h() cuando quieras crear un componente.
-que representa una estructura DOM estática diferente basada en los accesorios que se le pasan o un componente funcional sin estado (la Figura 3-6 muestra la salida de
+Es útil usar setup() con h() cuando se desea crear un componente que renderice una estructura DOM estática diferente en función de las props que se le pasen o un componente funcional sin estado. (la Figura 3-6 muestra la salida de
 Ejemplo 3-6 en la pestaña Vue de Chrome Devtools).</p>
 <p><img alt="" src="../static.png" title="Cómo se ve el componente sin estado que usa la función de renderizado h() en Vue Devtools" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A partir de ahora, utilizaremos la sintaxis <code>&lt;script setup&gt;</code> para demostrar casos de uso del hook setup() del componente debido a su simplicidad, siempre que sea aplicable.</p>
+</div>
+<h3 id="beforecreate">beforeCreate<a class="headerlink" href="#beforecreate" title="Permanent link">&para;</a></h3>
+<p>beforeCreate se ejecuta antes de que el renderizador de Vue cree la instancia del componente. Aquí el motor de Vue ha inicializado el componente pero aún no ha ejecutado la función <strong>data()</strong> ni calculado ninguna propiedad computada(computed). Por lo tanto, no hay datos reactivos disponibles.</p>
+<h3 id="created">created<a class="headerlink" href="#created" title="Permanent link">&para;</a></h3>
+<p>Este hook se ejecuta después de que el motor de Vue crea la instancia del componente. En esta etapa, la instancia del componente existe con datos reactivos, <em>watchers</em>, propiedades computadas y métodos definidos. Sin embargo, el motor de Vue aún no la ha montado en el DOM.  </p>
+<p>El hook <code>created</code> se ejecuta antes del primer renderizado del componente. Ayuda a realizar tareas que requieren que <code>this</code> esté disponible, como cargar datos desde un recurso externo dentro del componente.</p>
+<h3 id="beforemount">beforeMount<a class="headerlink" href="#beforemount" title="Permanent link">&para;</a></h3>
+<p>Este hook se ejecuta después de la creación. Aquí, el renderizador de Vue ha creado la instancia del componente y compilado su plantilla para renderizarla antes de la primera renderización del componente.</p>
+<h3 id="mounted">mounted<a class="headerlink" href="#mounted" title="Permanent link">&para;</a></h3>
+<p>Este hook se ejecuta después del primer renderizado del componente. En esta fase, el nodo DOM renderizado del componente está disponible para que lo accedas a través de la propiedad ++. Puedes usar este gancho para realizar cálculos adicionales con efectos secundarios sobre el nodo DOM del componente.</p>
+<h3 id="beforeupdate">beforeUpdate<a class="headerlink" href="#beforeupdate" title="Permanent link">&para;</a></h3>
+<p>El renderizador de Vue actualiza el árbol DOM del componente cuando cambia el estado de los datos locales. Este hook se ejecuta después de que comienza el proceso de actualización, y aún puedes usarlo para modificar el estado del componente internamente.</p>
+<h3 id="updated">updated<a class="headerlink" href="#updated" title="Permanent link">&para;</a></h3>
+<p>Este hook se ejecuta después de que el renderizador de Vue actualiza el árbol DOM del componente.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Los hooks <strong>updated</strong>, <strong>beforeUpdate</strong>, <strong>beforeMount</strong> y <strong>mounted</strong> no están disponibles en la representación del lado del servidor (SSR).</p>
+</div>
+<p>Utilice este gancho con precaución, ya que se ejecuta después de cualquier actualización del DOM del componente.</p>
+<div class="admonition info">
+<p class="admonition-title">ACTUALIZAR ESTADO LOCAL DENTRO DEL GANCHO ACTUALIZADO</p>
+<p>No debes modificar el estado de datos local del componente en este hook.</p>
+</div>
+<h3 id="beforeunmount">beforeUnmount<a class="headerlink" href="#beforeunmount" title="Permanent link">&para;</a></h3>
+<p>Este hook se ejecuta antes de que el renderizador de Vue comience a desmontar el componente. En este punto, el nodo DOM del componente, <strong>$el</strong>, todavía está disponible.</p>
+<h3 id="unmounted">unmounted<a class="headerlink" href="#unmounted" title="Permanent link">&para;</a></h3>
+<p>Este hook se ejecuta después de que el proceso de desmontaje finaliza correctamente y la instancia del componente ya no está disponible. Este gancho puede limpiar observadores o efectos adicionales, como los detectores de eventos del DOM.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>En Vue 2.x, debes usar <code>beforeDestroy</code> y <code>destroyed</code> en lugar de <code>beforeUnmount</code> y <code>mounted</code>, respectivamente.</p>
+<p>Los hooks <code>beforeUnmounted</code> y <code>unmounted</code> no están disponibles en la renderización del lado del servidor (SSR).</p>
+</div>
+<p>En resumen, podemos redibujar el diagrama del ciclo de vida de nuestro componente con los hooks del ciclo de vida, como se muestra en la Figura 3-7.</p>
+<p><img alt="" src="../flowchart.png" title="Diagrama de flujo del ciclo de vida de un componente Vue con hooks" /></p>
+<p>Podemos experimentar con el orden de ejecución de cada gancho del ciclo de vida con el componente del Ejemplo 3-7.</p>
+<div class="language-vue highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Example 3-7. Console log of lifecycle hooks</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-20-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-20-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-20-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-20-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-20-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-20-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-20-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-20-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-20-10">10</a></span>
+<span class="normal"><a href="#__codelineno-20-11">11</a></span>
+<span class="normal"><a href="#__codelineno-20-12">12</a></span>
+<span class="normal"><a href="#__codelineno-20-13">13</a></span>
+<span class="normal"><a href="#__codelineno-20-14">14</a></span>
+<span class="normal"><a href="#__codelineno-20-15">15</a></span>
+<span class="normal"><a href="#__codelineno-20-16">16</a></span>
+<span class="normal"><a href="#__codelineno-20-17">17</a></span>
+<span class="normal"><a href="#__codelineno-20-18">18</a></span>
+<span class="normal"><a href="#__codelineno-20-19">19</a></span>
+<span class="normal"><a href="#__codelineno-20-20">20</a></span>
+<span class="normal"><a href="#__codelineno-20-21">21</a></span>
+<span class="normal"><a href="#__codelineno-20-22">22</a></span>
+<span class="normal"><a href="#__codelineno-20-23">23</a></span>
+<span class="normal"><a href="#__codelineno-20-24">24</a></span>
+<span class="normal"><a href="#__codelineno-20-25">25</a></span>
+<span class="normal"><a href="#__codelineno-20-26">26</a></span>
+<span class="normal"><a href="#__codelineno-20-27">27</a></span>
+<span class="normal"><a href="#__codelineno-20-28">28</a></span>
+<span class="normal"><a href="#__codelineno-20-29">29</a></span>
+<span class="normal"><a href="#__codelineno-20-30">30</a></span>
+<span class="normal"><a href="#__codelineno-20-31">31</a></span>
+<span class="normal"><a href="#__codelineno-20-32">32</a></span>
+<span class="normal"><a href="#__codelineno-20-33">33</a></span>
+<span class="normal"><a href="#__codelineno-20-34">34</a></span>
+<span class="normal"><a href="#__codelineno-20-35">35</a></span>
+<span class="normal"><a href="#__codelineno-20-36">36</a></span>
+<span class="normal"><a href="#__codelineno-20-37">37</a></span>
+<span class="normal"><a href="#__codelineno-20-38">38</a></span>
+<span class="normal"><a href="#__codelineno-20-39">39</a></span>
+<span class="normal"><a href="#__codelineno-20-40">40</a></span>
+<span class="normal"><a href="#__codelineno-20-41">41</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2"></a>  <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;heading&quot;</span><span class="p">&gt;</span>I am <span class="cp">{{</span><span class="nx">message</span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3"></a>  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">v-model</span><span class="o">=</span><span class="s">&quot;</span><span class="nx">message</span><span class="s">&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter your name&quot;</span> <span class="p">/&gt;</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5"></a>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;ts&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7"></a><span class="w">  </span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">defineComponent</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;vue&#39;</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8"></a><span class="w">  </span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">defineComponent</span><span class="p">({</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9"></a><span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;MyFistComponent&#39;</span><span class="p">,</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10"></a><span class="w">  </span><span class="nx">data</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12"></a><span class="w">      </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15"></a><span class="w">  </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;setup hook triggered!&#39;</span><span class="p">)</span>
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19"></a><span class="w">  </span><span class="nx">beforeCreate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-20"><a id="__codelineno-20-20" name="__codelineno-20-20"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;beforeCreate hook triggered!&#39;</span><span class="p">)</span>
+</span><span id="__span-20-21"><a id="__codelineno-20-21" name="__codelineno-20-21"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-20-22"><a id="__codelineno-20-22" name="__codelineno-20-22"></a><span class="w">  </span><span class="nx">created</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-23"><a id="__codelineno-20-23" name="__codelineno-20-23"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;created hook triggered!&#39;</span><span class="p">)</span>
+</span><span id="__span-20-24"><a id="__codelineno-20-24" name="__codelineno-20-24"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-20-25"><a id="__codelineno-20-25" name="__codelineno-20-25"></a><span class="w">  </span><span class="nx">beforeMount</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-26"><a id="__codelineno-20-26" name="__codelineno-20-26"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;beforeMount hook triggered!&#39;</span><span class="p">)</span>
+</span><span id="__span-20-27"><a id="__codelineno-20-27" name="__codelineno-20-27"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-20-28"><a id="__codelineno-20-28" name="__codelineno-20-28"></a><span class="w">  </span><span class="nx">mounted</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-29"><a id="__codelineno-20-29" name="__codelineno-20-29"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;mounted hook triggered!&#39;</span><span class="p">)</span>
+</span><span id="__span-20-30"><a id="__codelineno-20-30" name="__codelineno-20-30"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-20-31"><a id="__codelineno-20-31" name="__codelineno-20-31"></a><span class="w">  </span><span class="nx">beforeUpdate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-32"><a id="__codelineno-20-32" name="__codelineno-20-32"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;beforeUpdate hook triggered!&#39;</span><span class="p">)</span>
+</span><span id="__span-20-33"><a id="__codelineno-20-33" name="__codelineno-20-33"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-20-34"><a id="__codelineno-20-34" name="__codelineno-20-34"></a><span class="w">  </span><span class="nx">updated</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-35"><a id="__codelineno-20-35" name="__codelineno-20-35"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;updated hook triggered!&#39;</span><span class="p">)</span>
+</span><span id="__span-20-36"><a id="__codelineno-20-36" name="__codelineno-20-36"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-20-37"><a id="__codelineno-20-37" name="__codelineno-20-37"></a><span class="w">  </span><span class="nx">beforeUnmount</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-38"><a id="__codelineno-20-38" name="__codelineno-20-38"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;beforeUnmount hook triggered!&#39;</span><span class="p">)</span>
+</span><span id="__span-20-39"><a id="__codelineno-20-39" name="__codelineno-20-39"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-20-40"><a id="__codelineno-20-40" name="__codelineno-20-40"></a><span class="w">  </span><span class="p">});</span>
+</span><span id="__span-20-41"><a id="__codelineno-20-41" name="__codelineno-20-41"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div></td></tr></table></div>
+<p><img alt="" src="../capture.png" title="Salida de consola: orden de ganchos para MyFirstComponent en el primer render" /></p>
+<p>Cuando cambiamos el valor de la propiedad del mensaje, el componente se vuelve a renderizar y la consola muestra la salida como se muestra en la Figura 3-9.</p>
+<p><img alt="" src="../maya.png" title="Solo los hooks beforeUpdate y updated se activan en el segundo renderizado." /></p>
+<p>También podemos revisar este orden del ciclo de vida en la pestaña Cronología, sección Rendimiento, de Vue Devtools, como se muestra en la Figura 3-10 para el primer renderizado.</p>
+<p><img alt="" src="../timeline.png" title="Cronograma para MyFirstComponent en el primer renderizado" /></p>
+<p>Y cuando el componente se vuelve a renderizar, la pestaña Herramientas para desarrolladores de Vue muestra los registros de eventos de la línea de tiempo, como en la Figura 3-11.</p>
+<p><img alt="" src="../timelinesecond.png" title="Cronograma para MyFirstComponent en el segundo renderizado" /></p>
+<p>Cada uno de los hooks del ciclo de vida anteriores puede resultar beneficioso. En la Tabla 3-1 encontrará los casos de uso más comunes para cada gancho.</p>
+<p><em>Table 3-1. Using the right hook for the right purpose</em></p>
+<table>
+<thead>
+<tr>
+<th>Lifecycle Hook</th>
+<th>Use case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>beforeCreate</code></td>
+<td>Cuando necesitas cargar lógica externa <em>sin</em> modificar los datos del componente.</td>
+</tr>
+<tr>
+<td><code>created</code></td>
+<td>Cuando necesitas cargar datos externos en el componente. Este hook es preferible al <code>mounted</code> para leer o escribir datos desde recursos externos.</td>
+</tr>
+<tr>
+<td><code>mounted</code></td>
+<td>Cuando necesitas realizar cualquier manipulación del DOM o acceder al nodo DOM del componente <code>this.$el</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Hasta ahora, hemos aprendido el orden del ciclo de vida del componente y sus hooks disponibles. A continuación, veremos cómo crear y organizar la lógica común del componente en métodos con la propiedad <code>method</code>.</p>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<p>Los métodos son lógica que no depende de los datos del componente, aunque podemos acceder al estado local del componente usando la instancia <code>this</code> dentro de un método. Los métodos del componente son funciones definidas dentro de la propiedad <code>methods</code>. Como muestra el Ejemplo 3‑8, podemos definir un método para invertir la propiedad <code>message</code>.</p>
 
 
 

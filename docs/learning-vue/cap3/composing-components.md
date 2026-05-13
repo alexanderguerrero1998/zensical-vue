@@ -342,8 +342,136 @@ setup(props, context) {
 })
 
 ```
-Es útil usar setup() con h() cuando quieras crear un componente.
-que representa una estructura DOM estática diferente basada en los accesorios que se le pasan o un componente funcional sin estado (la Figura 3-6 muestra la salida de
+Es útil usar setup() con h() cuando se desea crear un componente que renderice una estructura DOM estática diferente en función de las props que se le pasen o un componente funcional sin estado. (la Figura 3-6 muestra la salida de
 Ejemplo 3-6 en la pestaña Vue de Chrome Devtools).
 
+
 ![](static.png 'Cómo se ve el componente sin estado que usa la función de renderizado h() en Vue Devtools')
+
+
+!!! note
+
+    A partir de ahora, utilizaremos la sintaxis `<script setup>` para demostrar casos de uso del hook setup() del componente debido a su simplicidad, siempre que sea aplicable.
+
+### beforeCreate
+beforeCreate se ejecuta antes de que el renderizador de Vue cree la instancia del componente. Aquí el motor de Vue ha inicializado el componente pero aún no ha ejecutado la función **data()** ni calculado ninguna propiedad computada(computed). Por lo tanto, no hay datos reactivos disponibles.
+
+### created
+Este hook se ejecuta después de que el motor de Vue crea la instancia del componente. En esta etapa, la instancia del componente existe con datos reactivos, *watchers*, propiedades computadas y métodos definidos. Sin embargo, el motor de Vue aún no la ha montado en el DOM.  
+
+El hook `created` se ejecuta antes del primer renderizado del componente. Ayuda a realizar tareas que requieren que `this` esté disponible, como cargar datos desde un recurso externo dentro del componente.
+
+### beforeMount
+Este hook se ejecuta después de la creación. Aquí, el renderizador de Vue ha creado la instancia del componente y compilado su plantilla para renderizarla antes de la primera renderización del componente.
+
+### mounted
+Este hook se ejecuta después del primer renderizado del componente. En esta fase, el nodo DOM renderizado del componente está disponible para que lo accedas a través de la propiedad ++. Puedes usar este gancho para realizar cálculos adicionales con efectos secundarios sobre el nodo DOM del componente.
+
+### beforeUpdate
+El renderizador de Vue actualiza el árbol DOM del componente cuando cambia el estado de los datos locales. Este hook se ejecuta después de que comienza el proceso de actualización, y aún puedes usarlo para modificar el estado del componente internamente.
+
+### updated
+Este hook se ejecuta después de que el renderizador de Vue actualiza el árbol DOM del componente.
+
+!!! note 
+
+    Los hooks **updated**, **beforeUpdate**, **beforeMount** y **mounted** no están disponibles en la representación del lado del servidor (SSR).
+
+Utilice este gancho con precaución, ya que se ejecuta después de cualquier actualización del DOM del componente.
+
+!!! info "ACTUALIZAR ESTADO LOCAL DENTRO DEL GANCHO ACTUALIZADO"
+
+    No debes modificar el estado de datos local del componente en este hook.
+
+### beforeUnmount
+Este hook se ejecuta antes de que el renderizador de Vue comience a desmontar el componente. En este punto, el nodo DOM del componente, **$el**, todavía está disponible.
+
+### unmounted
+Este hook se ejecuta después de que el proceso de desmontaje finaliza correctamente y la instancia del componente ya no está disponible. Este gancho puede limpiar observadores o efectos adicionales, como los detectores de eventos del DOM.
+
+
+!!! note 
+
+    En Vue 2.x, debes usar `beforeDestroy` y `destroyed` en lugar de `beforeUnmount` y `mounted`, respectivamente.
+
+    Los hooks `beforeUnmounted` y `unmounted` no están disponibles en la renderización del lado del servidor (SSR).
+
+En resumen, podemos redibujar el diagrama del ciclo de vida de nuestro componente con los hooks del ciclo de vida, como se muestra en la Figura 3-7.
+
+![](flowchart.png 'Diagrama de flujo del ciclo de vida de un componente Vue con hooks')
+
+Podemos experimentar con el orden de ejecución de cada gancho del ciclo de vida con el componente del Ejemplo 3-7.
+
+```vue linenums="1" title="Example 3-7. Console log of lifecycle hooks"
+<template>
+  <h2 class="heading">I am {{message}}</h2>
+  <input v-model="message" type="text" placeholder="Enter your name" />
+</template>
+
+<script lang="ts">
+  import { defineComponent } from 'vue'
+  export default defineComponent({
+  name: 'MyFistComponent',
+  data() {
+    return {
+      message: ''
+    }
+  },
+  setup() {
+    console.log('setup hook triggered!')
+    return {}
+  },
+  beforeCreate() {
+    console.log('beforeCreate hook triggered!')
+  },
+  created() {
+    console.log('created hook triggered!')
+  },
+  beforeMount() {
+    console.log('beforeMount hook triggered!')
+  },
+  mounted() {
+    console.log('mounted hook triggered!')
+  },
+  beforeUpdate() {
+    console.log('beforeUpdate hook triggered!')
+  },
+  updated() {
+    console.log('updated hook triggered!')
+  },
+  beforeUnmount() {
+    console.log('beforeUnmount hook triggered!')
+  },
+  });
+</script>
+```
+
+![](capture.png 'Salida de consola: orden de ganchos para MyFirstComponent en el primer render')
+
+Cuando cambiamos el valor de la propiedad del mensaje, el componente se vuelve a renderizar y la consola muestra la salida como se muestra en la Figura 3-9.
+
+![](maya.png 'Solo los hooks beforeUpdate y updated se activan en el segundo renderizado.')
+
+También podemos revisar este orden del ciclo de vida en la pestaña Cronología, sección Rendimiento, de Vue Devtools, como se muestra en la Figura 3-10 para el primer renderizado.
+
+![](timeline.png 'Cronograma para MyFirstComponent en el primer renderizado')
+
+Y cuando el componente se vuelve a renderizar, la pestaña Herramientas para desarrolladores de Vue muestra los registros de eventos de la línea de tiempo, como en la Figura 3-11.
+
+![](timelinesecond.png 'Cronograma para MyFirstComponent en el segundo renderizado')
+
+Cada uno de los hooks del ciclo de vida anteriores puede resultar beneficioso. En la Tabla 3-1 encontrará los casos de uso más comunes para cada gancho.
+
+_Table 3-1. Using the right hook for the right purpose_
+
+| Lifecycle Hook | Use case |
+|---|---|
+| `beforeCreate` | Cuando necesitas cargar lógica externa *sin* modificar los datos del componente. |
+| `created` | Cuando necesitas cargar datos externos en el componente. Este hook es preferible al `mounted` para leer o escribir datos desde recursos externos. |
+| `mounted` | Cuando necesitas realizar cualquier manipulación del DOM o acceder al nodo DOM del componente `this.$el`. |
+
+Hasta ahora, hemos aprendido el orden del ciclo de vida del componente y sus hooks disponibles. A continuación, veremos cómo crear y organizar la lógica común del componente en métodos con la propiedad `method`.
+
+## Methods
+Los métodos son lógica que no depende de los datos del componente, aunque podemos acceder al estado local del componente usando la instancia `this` dentro de un método. Los métodos del componente son funciones definidas dentro de la propiedad `methods`. Como muestra el Ejemplo 3‑8, podemos definir un método para invertir la propiedad `message`.
+
